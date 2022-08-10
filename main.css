@@ -50,56 +50,94 @@ html {
  background-color: #000;
 }
 
-.toggle-button {
-    position: absolute;
-    top: 21px;
-    right: 1rem;
+.nav-btn {
+    width: 28px;
+    height: 20px;
     display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
+    margin-bottom: 10px;
+    margin-right: 20px;
 }
 
-
-.toggle-button .bar {
-    height: 3px;
-    width: 100%;
-    background-color: black;
-    border-radius: 10px;
+.nav-btn:hover {
+ cursor: pointer;
 }
 
-@media (max-width: 700px) {
-    .toggle-button {
-        display: flex;
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.3);
+    display: none;
+    animation: fadeIn linear 0.2s;
+}
+
+.navbar-list-mb {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 250px;
+    max-width: 100%;
+    background-color: #fff;
+    transform: translateX(100%);
+    transition: transform linear 0.2s;
+}
+
+.navbar-list-mb .list {
+margin-left: 24px;
+list-style-type: none;
+margin-top: 50px;
+}
+
+.navbar-list-mb li a {
+    text-align: left;
+  text-decoration: none;
+  display: block;
+  padding: 8px 0;
+color: #000;
+    }
+
+.nav-mb-close {
+    width: 20px;
+    height: 20px;
+    color: #666;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.nav-mb-close:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.nav-input:checked ~ .nav-overlay {
+    display: block;
+}
+
+.nav-input:checked ~ .navbar-list-mb {
+    transform: translateX(0);
+}
+
+@media (max-width: 1023px) {
+    .nav-btn {
+        display: block;
     }
     .navbar-list {
-        display: none;
-        width: 100%;
+        display:none
     }
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .navbar-list ul {
-        flex-direction: column;
-        width: 100%;
-    }
-    .navbar-list li {
-   text-align:center;
-    }
-    .navbar-list li a {
-        padding: 10px 20px;
-    }
-    .navbar-list.active {
-     display: flex;
-    }
-    .navbar-list.close {
-        display: none;
-       }
-  
-    }
+}
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
 .slider {
 margin-top: 40px;
