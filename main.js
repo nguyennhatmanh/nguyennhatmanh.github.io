@@ -1,12 +1,3 @@
-const toggleButton = document.getElementsByClassName('toggle-button')[0]
-const navbarList = document.getElementsByClassName('navbar-list')[0]
-
-toggleButton.addEventListener('click',() => {
-    navbarList.classList.toggle('active')
-})
-navbarList.addEventListener('click',() => {
-    navbarList.classList.toggle('close')
-})
 
 function showMessage1() {
     swal({
